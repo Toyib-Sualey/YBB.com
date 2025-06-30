@@ -1,0 +1,222 @@
+:root {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --input-bg: #2c2c2c;
+  }
+  
+  body.light-theme {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --input-bg: #f0f0f0;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  .main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background: var(--bg-color);
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .nav-bar ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .nav-bar a {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+  
+  .nav-icon {
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.1); /* subtle glow */
+  border-radius: 50%;
+  padding: 12px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  }
+  
+  .nav-icon img {
+    height: 20px;
+    width: 20px;
+  }
+
+  .nav-icon:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.1);
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .search {
+    padding: 6px 10px;
+    background: var(--input-bg);
+    border: none;
+    border-radius: 20px;
+    color: var(--text-color);
+  }
+
+  .search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-container input{
+    width: 250px;
+    height: 44px;
+    padding: 10px 45px 10px 20px;
+    border-radius: 50px; /* Full roundness */
+    border: none;
+    font-size: 16px;
+    background-color: var(--input-bg, rgb(179, 151, 151));
+    color: var(--text-color, #c00000);
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
+  }
+
+  .search-container input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--accent-color, #1db954);
+  }
+  
+  .search-icon {
+    position: absolute;
+    right: 18px;
+    font-size: 20px;
+    color: var(--text-color, #fff);
+    pointer-events: none;
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  #menuToggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: var(--text-color);
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    right: 0;
+    top: 40px;
+    background: var(--input-bg);
+    color: var(--text-color);
+    padding: 15px;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    min-width: 160px;
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .dropdown-menu.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+  
+  .dropdown-menu a {
+    text-decoration: none;
+    color: var(--text-color);
+    margin: 8px 0;
+  }
+  
+  .profile-pic {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid var(--text-color);
+  }
+  
+  .theme-toggle {
+    margin: 10px 0;
+  }
+  
+  .banner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 40px;
+    background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+    color: white;
+  }
+  
+  .image-container {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .image-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+  
+  .description {
+    flex: 1;
+    padding: 20px;
+  }
+  
+  .description h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .description p {
+    font-size: 1rem;
+    color: #cccccc;
+    line-height: 1.6;
+  }
+  
+  .cursor {
+    display: inline-block;
+    width: 1px;
+    background: rgb(2, 210, 238)
+    animation: blink 0.7s infinite;
+}
+
+  /* Optional – define custom highlight colors */
+.highlight {
+    color: #b9631d; /* Spotify green or your preferred color */
+    font-weight: bold;
+  }
+  
+  
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+  
